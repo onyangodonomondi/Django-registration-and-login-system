@@ -17,6 +17,11 @@ class RegisterForm(UserCreationForm):
                                 widget=forms.TextInput(attrs={'placeholder': 'Last Name',
                                                               'class': 'form-control',
                                                               }))
+    phoneNo = forms.CharField(max_length=10,
+                                required=True,
+                                widget=forms.TextInput(attrs={'placeholder': 'phoneNo',
+                                                              'class': 'form-control',
+                                                              }))
     username = forms.CharField(max_length=100,
                                required=True,
                                widget=forms.TextInput(attrs={'placeholder': 'Username',
@@ -43,7 +48,7 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
+        fields = ['first_name', 'last_name',  'phoneNo', 'username', 'email', 'password1', 'password2']
 
 
 class LoginForm(AuthenticationForm):
