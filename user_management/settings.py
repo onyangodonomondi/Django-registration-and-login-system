@@ -30,7 +30,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -77,8 +77,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'user_management.wsgi.application'
 
 
 # Database
@@ -139,6 +137,14 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR, 'static')
+]
+
+WSGI_APPLICATION = 'user_management.wsgi.application'
+
+
 
 
 LOGIN_REDIRECT_URL = '/'
